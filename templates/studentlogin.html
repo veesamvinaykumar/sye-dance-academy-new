@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SYE Dance Academy Login</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+body{
+min-height:100vh;
+    background:linear-gradient(135deg,#4a5672,#4c5e7b,#7c3aed);
+    overflow:hidden;
+    color: white;
+}
+.background{
+    position:absolute;
+    width:100%;
+    height:100%;
+}
+
+.background span{
+    position:absolute;
+    display:block;
+    width:20px;
+    height:20px;
+    background:rgba(255,255,255,0.1);
+    animation:animate 15s linear infinite;
+    border-radius:50%;
+}
+
+@keyframes animate{
+    0%{
+        transform:translateY(100vh) scale(0);
+    }
+    100%{
+        transform:translateY(-100vh) scale(1);
+    }
+}
+
+.login-container{
+    width:380px;
+    padding:40px;
+    background:rgba(255,255,255,0.08);
+    backdrop-filter:blur(15px);
+    border-radius:20px;
+    box-shadow:0 10px 20px rgba(0,0,0,0.4);
+    text-align:center;
+    animation:fadeIn 1s ease;
+    position:absolute;
+    top: 25%;
+    left: 40%;
+    
+}
+
+@keyframes fadeIn{
+    from{
+        opacity:0;
+        transform:translateY(30px);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+.logo{
+    font-size:32px;
+    margin-bottom:10px;
+}
+
+.input-box{
+    margin-bottom:20px;
+}
+
+.input-box input{
+    width:100%;
+    padding:14px;
+    border:none;
+    outline:none;
+    border-radius:10px;
+    font-size:15px;
+}
+
+.login-btn{
+    width:100%;
+    padding:14px;
+    border:none;
+    border-radius:10px;
+    background:#f59e0b;
+    color:white;
+    font-size:16px;
+    font-weight:600;
+    cursor:pointer;
+    transition:0.3s;
+}
+
+.login-btn:hover{
+    transform:translateY(-3px);
+    background:#f97316;
+}
+
+.footer{
+    color:white;
+    font-size:13px;
+    margin-top:15px;
+}
+</style>
+</head>
+
+<body>
+ {% include 'base.html' %}
+<div class="background">
+    <span style="left:10%;animation-duration:12s;"></span>
+    <span style="left:30%;animation-duration:18s;"></span>
+    <span style="left:50%;animation-duration:10s;"></span>
+    <span style="left:70%;animation-duration:16s;"></span>
+    <span style="left:90%;animation-duration:14s;"></span>
+</div>
+
+<div class="login-container">
+
+    <div class="logo">💃🕺</div>
+
+    <h2>SYE Dance Academy</h2>
+
+    <form method="POST">
+
+        <div class="input-box">
+            <input type="tel" name="phone" placeholder="Enter Phone Number" required>
+        </div>
+
+        <div class="input-box">
+            <input type="password" name="password" placeholder="Enter Password" required>
+        </div>
+
+        <button type="submit" class="login-btn">
+            Login
+        </button>
+
+    </form>
+
+    <div class="footer">
+        Welcome Back ✨
+    </div>
+
+</div>
+
+</body>
+</html>

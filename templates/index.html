@@ -1,0 +1,324 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<style>
+  body, html {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+  }
+
+  .hero-section {
+    position: relative;
+  
+    height: 100vh;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+    overflow: hidden;
+    animation: zoomIn 20s infinite alternate;
+  }
+
+  /* Gradient overlay */
+  .hero-section::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: linear-gradient(to bottom right, rgba(0,0,0,0.6), rgba(0,0,0,0.3));
+    z-index: 1;
+  }
+
+  .hero-content {
+    position: relative;
+    z-index: 2;
+    animation: fadeInUp 2s ease forwards;
+    opacity: 0;
+  }
+
+  .hero-section h1 {
+    font-size: 4rem;
+    font-weight: 900;
+    text-shadow: 3px 3px 10px rgba(0,0,0,0.7);
+    margin-bottom: 20px;
+  }
+
+  .hero-subtitle {
+    font-size: 1.5rem;
+    font-weight: 500;
+    margin-bottom: 30px;
+    animation: fadeIn 3s ease forwards 0.5s;
+    opacity: 0;
+  }
+  .hero-section {
+    position: relative;
+    
+    height: 100vh;           /* Full viewport height */
+    min-height: 600px;       /* Prevent too small screens from collapsing */
+    width: 100%;
+    background-size: cover;   /* Cover entire section */
+    background-position: center;
+    display: flex;
+    flex-direction: column;   /* Stack content vertically */
+    justify-content: center;  /* Center vertically */
+    align-items: center;      /* Center horizontally */
+    text-align: center;
+    color: white;
+    overflow: hidden;
+}
+
+
+  .btn-primary {
+    background: #ff416c;
+    background: linear-gradient(to right, #ff416c, #ff4b2b);
+    border: none;
+    padding: 15px 40px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    border-radius: 50px;
+    color: white;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    box-shadow: 0px 8px 15px rgba(0,0,0,0.3);
+  }
+
+  .btn-primary:hover {
+    transform: scale(1.1);
+    box-shadow: 0px 15px 20px rgba(0,0,0,0.4);
+  }
+
+  /* Animations */
+  @keyframes fadeInUp {
+    0% { opacity: 0; transform: translateY(50px); }
+    100% { opacity: 1; transform: translateY(0); }
+  }
+
+  @keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+  }
+
+  @keyframes zoomIn {
+    0% { transform: scale(1); }
+    100% { transform: scale(1.05); }
+  }
+
+  /* Responsive */
+  @media(max-width: 768px){
+    .hero-section h1 { font-size: 3rem; }
+    .hero-subtitle { font-size: 1.2rem; }
+    .btn-primary { padding: 12px 30px; font-size: 1rem; }
+  }
+  .dance-showcase{
+    min-height:100vh;
+    background:
+    radial-gradient(circle at left,#ff00aa22,transparent 40%),
+    radial-gradient(circle at right,#00d9ff22,transparent 40%),
+    #050816;
+
+    overflow:hidden;
+    position:relative;
+}
+.heading{
+    text-align:center;
+    padding-top:50px;
+}
+
+.heading span{
+    color:#b13cff;
+    font-size:32px;
+    font-family:cursive;
+}
+
+.heading h1{
+    color:white;
+    font-size:80px;
+    font-weight:800;
+    margin-top:10px;
+}
+.dance-container{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    width:90%;
+    margin:auto;
+}
+.left-dancer img,
+.right-dancer img{
+    width:450px;
+    animation:floatDance 4s ease-in-out infinite;
+}
+
+@keyframes floatDance{
+
+    0%{
+        transform:translateY(0px);
+    }
+
+    50%{
+        transform:translateY(-20px);
+    }
+
+    100%{
+        transform:translateY(0px);
+    }
+}
+.glow-box{
+    position:absolute;
+    width:260px;
+    height:400px;
+
+    border:8px solid transparent;
+
+    border-image:
+    linear-gradient(
+    45deg,
+    #ff00ff,
+    #00ffff
+    ) 1;
+
+    box-shadow:
+    0 0 30px #ff00ff,
+    0 0 50px #00ffff;
+}
+.dance-menu{
+    width:420px;
+}
+
+.dance-menu h2{
+    color:#c83cff;
+    text-align:center;
+    margin-bottom:25px;
+}
+.dance-menu a{
+
+    display:flex;
+    align-items:center;
+
+    text-decoration:none;
+
+    color:white;
+
+    padding:18px 25px;
+
+    margin-bottom:18px;
+
+    border:1px solid #c83cff;
+
+    border-radius:15px;
+
+    transition:.4s;
+
+    backdrop-filter:blur(10px);
+}
+
+.dance-menu a:hover{
+
+    transform:translateX(10px);
+
+    box-shadow:
+    0 0 20px #c83cff;
+
+    background:#c83cff22;
+}
+.dance-menu button{
+
+    width:260px;
+    height:70px;
+
+    display:block;
+    margin:30px auto;
+
+    border:none;
+
+    border-radius:50px;
+
+    background:
+    linear-gradient(
+    45deg,
+    #ff00ff,
+    #7a00ff
+    );
+
+    color:white;
+
+    font-size:24px;
+
+    cursor:pointer;
+
+    box-shadow:
+    0 0 25px #ff00ff;
+}
+body
+{
+background:
+
+    #050816;
+}
+.dance-showcase::before{
+    content:'';
+    position:absolute;
+    width:100%;
+    height:100%;
+    background:url('/static/card.png');
+    opacity:.15;
+}
+</style>
+
+<div class="hero-section">
+    <div class="hero-content">
+        <h1 class="hero-title">Welcome to SYE DANCE ACADEMY</h1>
+        <p class="hero-subtitle">"Unleash Your Talent Through the Power of Dance"</p>
+        <a href="{{ url_for('register') }}" class="btn btn-primary">Register Now</a>
+    </div>
+</div>
+<div>
+  <section class="dance-showcase">
+
+    <div class="heading">
+        <span>Find The One For You</span>
+        <h1>Choose Your Dance Style</h1>
+    </div>
+
+    <div class="dance-container">
+
+        <!-- Left Dancer -->
+        <div class="left-dancer">
+            
+            <img src="{{ url_for('static', filename='rightside.png') }}">
+        </div>
+
+        <!-- Center Content -->
+        <div class="dance-menu">
+
+            <h2>CHOOSE YOUR DANCE</h2>
+
+            <a href="#">Western Dance</a>
+            <a href="#">Classical Dance</a>
+            <a href="#">Barathanatyam</a>
+            <a href="#">Zumba</a>
+            <a href="#">Hip Hop</a>
+            <a href="#">Contemporary</a>
+
+            <button>Let's Dance →</button>
+
+        </div>
+
+        <!-- Right Dancer -->
+        <div class="right-dancer">
+           
+            <img src="{{ url_for('static', filename='leftside.png') }}">
+        </div>
+
+    </div>
+
+</section>
+</div>
+{% include "footer.html" %}
+{% endblock %}

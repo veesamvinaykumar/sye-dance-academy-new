@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SYE Dance Academy</title>
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<style>
+    *{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Segoe UI',sans-serif;
+}
+
+body{
+background:#f4f4f4;
+}
+
+/* HEADER */
+
+header{
+background: linear-gradient(90deg, #2a2125, #2c2723);
+padding:20px;
+}
+
+.logo-section{
+display:flex;
+justify-content:space-between;
+align-items:center;
+}
+
+.logo-circle{
+width:150px;
+height:150px;
+border-radius:50%;
+overflow:hidden;
+border:5px solid gold;
+background:white;
+}
+
+.logo-circle img{
+width:100%;
+height:100%;
+object-fit:cover;
+}
+
+.social-circle{
+width:70px;
+height:70px;
+border-radius:50%;
+background:gold;
+display:flex;
+justify-content:center;
+align-items:center;
+font-size:30px;
+}
+
+.title-box{
+text-align:center;
+flex:1;
+}
+
+.title-box h1{
+font-size:60px;
+font-weight:900;
+background:linear-gradient(45deg,gold,#fff,gold);
+-webkit-background-clip:text;
+-webkit-text-fill-color:transparent;
+animation:glow 2s infinite;
+}
+
+.title-box h2{
+font-size:45px;
+color:white;
+margin-top:10px;
+letter-spacing:3px;
+}
+
+.title-box p{
+color:#ddd;
+margin-top:10px;
+font-size:18px;
+}
+
+@keyframes glow{
+50%{
+transform:scale(1.05);
+}
+}
+
+/* MAIN */
+
+.main-container{
+display:flex;
+padding:20px;
+gap:20px;
+}
+
+.sidebar{
+width:250px;
+}
+
+.dance-menu{
+background:white;
+padding:20px;
+border-radius:25px;
+box-shadow:0 0 15px rgba(0,0,0,.2);
+}
+
+.dance-menu h3{
+text-align:center;
+margin-bottom:20px;
+font-size:24px;
+}
+
+.dance-menu ul{
+list-style:none;
+}
+
+.dance-menu li{
+background:black;
+color:white;
+padding:12px;
+margin-bottom:10px;
+text-align:center;
+border-radius:10px;
+cursor:pointer;
+transition:.3s;
+}
+
+.dance-menu li:hover{
+background:gold;
+color:black;
+transform:translateX(5px);
+}
+
+.content{
+flex:1;
+}
+
+.section-title{
+text-align:center;
+margin-bottom:20px;
+}
+
+.section-title h2{
+font-size:35px;
+color:#111;
+}
+
+.cards{
+display:grid;
+grid-template-columns:repeat(4,1fr);
+gap:20px;
+}
+
+.card{
+background:white;
+border-radius:15px;
+overflow:hidden;
+box-shadow:0 0 15px rgba(0,0,0,.15);
+transition:.4s;
+}
+
+.card:hover{
+transform:translateY(-10px);
+}
+
+.card img{
+width:100%;
+height:250px;
+object-fit:cover;
+}
+
+.card h3{
+padding:10px;
+text-align:center;
+}
+
+.card p{
+padding-bottom:15px;
+text-align:center;
+color:#666;
+}
+
+/* FOOTER */
+
+
+@media(max-width:1000px){
+
+.cards{
+grid-template-columns:repeat(2,1fr);
+}
+
+.main-container{
+flex-direction:column;
+}
+
+.sidebar{
+width:100%;
+}
+
+}
+
+@media(max-width:600px){
+
+.cards{
+grid-template-columns:1fr;
+}
+
+.title-box h1{
+font-size:35px;
+}
+
+.title-box h2{
+font-size:25px;
+}
+
+}
+</style>
+<body>
+     {% include 'base.html' %}
+<header>
+
+<div class="logo-section">
+    <div class="logo-circle">
+        <img src="https://img.magnific.com/premium-photo/exquisite-polished-bronze-nataraja-statue-capturing-cosmic-dance-lord-shiva-poised-simple-dark-pedestal-embodying-hindu-art_890191-12691.jpg" alt="">
+    </div>
+
+    <div class="title-box">
+        <h1>WELCOME</h1>
+        <h2>SYE DANCE ACADEMY</h2>
+        <p>Where Passion Meets Performance ✨</p>
+    </div>
+
+    <div class="social-circle">
+        <i class="fa-solid fa-star"></i>
+    </div>
+</div>
+
+</header>
+
+<section class="main-container">
+
+    <aside class="sidebar">
+
+        <div class="dance-menu">
+            <h3>Dance Styles</h3>
+
+            <ul>
+                <li>Western</li>
+                <li>Zumba</li>
+                <li>Classical</li>
+                <li>Hip Hop</li>
+                <li>Folk</li>
+                <li>Salsa</li>
+                <li>Contemporary</li>
+                <li>Freestyle</li>
+            </ul>
+
+        </div>
+
+    </aside>
+
+    <main class="content">
+
+        <div class="section-title">
+            <h2>🌟 Our Students in Movies 🌟</h2>
+        </div>
+
+        <div class="cards">
+
+            <div class="card">
+                <img src="../static/card0.jpg">
+                <h3>Movie Name</h3>
+                <p>15 Students Participated</p>
+            </div>
+
+            <div class="card">
+                <img src="../static/card1.jpg">
+                <h3>Movie Name</h3>
+                <p>10 Students Participated</p>
+            </div>
+
+            <div class="card">
+                <img src="../static/card2.jpg">
+                <h3>Movie Name</h3>
+                <p>8 Students Participated</p>
+            </div>
+
+            <div class="card">
+                <img src="../static/card4.jpg">
+                <h3>Movie Name</h3>
+                <p>12 Students Participated</p>
+            </div>
+
+            <div class="card">
+                <img src="../static/card5.jpg">
+                <h3>Movie Name</h3>
+                <p>20 Students Participated</p>
+            </div>
+
+            <div class="card">
+                <img src="../static/logo.jpg">
+                <h3>Movie Name</h3>
+                <p>7 Students Participated</p>
+            </div>
+
+            <div class="card">
+                <img src="../static/dance_bg.jpg">
+                <h3>Movie Name</h3>
+                <p>18 Students Participated</p>
+            </div>
+
+            <div class="card">
+                <img src="../static/card1.jpg">
+                <h3>Movie Name</h3>
+                <p>11 Students Participated</p>
+            </div>
+
+        </div>
+
+    </main>
+</section>
+{% include 'footer.html' %}
+</body>
+</html>
